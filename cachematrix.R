@@ -1,7 +1,19 @@
-## Put comments here that give an overall description of what your
-## functions do
+## cachematrix.R
+##
+## These functions implement a CacheMatrix, a matrix that
+## caches its inverse matrix to speed up computations.
+## makeCacheMatrix(x) constructs a CacheMatrix from a matrix.
+## solveCache(x) solves x for its inverse.
 
-## Write a short comment describing this function
+
+## makeCacheMatrix is a constructor for a matrix-like object
+## that caches its inverse. It takes a matrix as argument.
+##
+## The CacheMatrix has four methods:
+## * `get` gets the value of the matrix
+## * `set` sets the value of the matrix
+## * `getinv` gets the inverse matrix
+## * `setinv` sets the inverse matrix
 
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL
@@ -17,7 +29,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve solves the CacheMatrix inverse, either
+## by returning a cached value or computing the value.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
